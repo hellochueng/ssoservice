@@ -4,16 +4,16 @@
        xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
        xsi:schemaLocation="http://www.springframework.org/schema/beans        http://www.springframework.org/schema/beans/spring-beans.xsd        http://code.alibabatech.com/schema/dubbo        http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
 
-    <dubbo:application name="provider"/>
+    <dubbo:application name="provider" id="provider" />
 
     <!--<dubbo:registry address="N/A"/>-->
 
-    <dubbo:registry protocol="zookeeper" address="139.199.208.159:2181" client="zkclient" />
+    <dubbo:registry address="zookeeper://139.199.208.159:2181"/>
 
     <dubbo:protocol name="dubbo" port="20880"/>
 
-    <bean id="userService" class="com.sso.service.userservice.UserServiceImp"/>
+    <bean id="userService" class="com.sso.service.userservice.UserServiceImp" />
 
-    <dubbo:service interface="org.project.service.UserService" ref="userService" />
+    <dubbo:service ref="userService" interface="org.project.service.UserService" timeout="1800000" version="1.0.0.1"/>
 
 </beans>

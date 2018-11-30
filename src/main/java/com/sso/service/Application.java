@@ -9,7 +9,7 @@ import org.springframework.context.annotation.ImportResource;
 @SpringBootApplication
 @EnableCaching
 @MapperScan("com.sso.service.dao")
-@ImportResource(locations = {"classpath:dubbo.xml"})
+//@ImportResource(locations = {"classpath:dubbo.xml"})
 public class Application {
 
     public static void main(String args[]){

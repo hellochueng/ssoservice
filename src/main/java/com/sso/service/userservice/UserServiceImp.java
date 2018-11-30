@@ -1,14 +1,14 @@
 package com.sso.service.userservice;
 
+import com.alibaba.dubbo.config.annotation.Service;
 import com.sso.service.dao.UserMapper;
 import org.project.service.UserService;
 import org.projectshop.pojo.User;
 import org.projectshop.pojo.result.Result;
 import org.projectshop.pojo.UserExample;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
-@Service
+@Service(version = "1.0.0")
 public class UserServiceImp implements UserService {
 
     @Autowired
